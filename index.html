@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detect Touch Device</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p id="result"></p>
+  <script>
+    let result = document.getElementById("result");
+    const isTouchDevice = () => {
+      try {
+        // Try to create touch event. It would fail for desktops and throw an error
+        document.createEvent("TouchEvent");
+        result.innerHTML = `It is a <span>Touch</span> device`
+      }
+      catch(e) {
+        result.innerHTML = `It is a <span>Mouse</span> device`;
+        };
+    };
+    isTouchDevice();
+  </script>
+</body>
+</html>
